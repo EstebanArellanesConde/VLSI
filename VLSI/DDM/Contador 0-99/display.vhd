@@ -1,0 +1,39 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY DISPLAY IS
+PORT( BINARIO: IN STD_LOGIC_VECTOR (3 downto 0);
+
+DISPLAY: OUT STD_LOGIC_VECTOR (6 downto 0));
+
+END ENTITY;
+ARCHITECTURE ALGO OF DISPLAY IS
+
+SIGNAL AUX: STD_LOGIC_VECTOR (6 downto 0);
+
+BEGIN
+PROCESS (BINARIO)
+BEGIN
+
+CASE BINARIO is
+when "0000" => AUX <= "0000001"; ­­0
+when "0001" => AUX <= "1001111"; ­­1
+when "0010" => AUX <= "0010010"; ­­2
+when "0011" => AUX <= "0000110"; ­­3
+when "0100" => AUX <= "1001100"; ­­4
+when "0101" => AUX <= "0100100"; ­­5
+when "0110" => AUX <= "0100000"; ­­6
+when "0111" => AUX <= "0001111"; ­­7
+when "1000" => AUX <= "0000000"; ­­8
+when "1001" => AUX <= "0001100"; ­­9
+when "1010" => AUX <= "0000001"; ­­0
+when "1011" => AUX <= "0000001"; ­­0
+when "1100" => AUX <= "0000001"; ­­0
+when "1101" => AUX <= "0000001"; ­­0
+when "1110" => AUX <= "0000001"; ­­0
+when "1111" => AUX <= "0000001"; ­­0
+END CASE;
+END PROCESS;
+
+DISPLAY<=AUX;
+
+END ALGO;

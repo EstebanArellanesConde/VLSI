@@ -1,0 +1,29 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY dec_7seg IS
+    PORT(
+        DIGIT: IN INTEGER RANGE 0 TO 9;
+        SEG: OUT STD_LOGIC_VECTOR(6 DOWNTO 0) -- Salida a 7 segmentos
+    );
+END ENTITY;
+
+ARCHITECTURE BEAS OF dec_7seg IS
+BEGIN
+    PROCESS(DIGIT)
+    BEGIN
+        CASE DIGIT IS
+            WHEN 0 => SEG <= "0000001";
+            WHEN 1 => SEG <= "1001111";
+            WHEN 2 => SEG <= "0010010";
+            WHEN 3 => SEG <= "0000110";
+            WHEN 4 => SEG <= "1001100";
+            WHEN 5 => SEG <= "0100100";
+            WHEN 6 => SEG <= "0100000";
+            WHEN 7 => SEG <= "0001111";
+            WHEN 8 => SEG <= "0000000";
+            WHEN 9 => SEG <= "0000100";
+            WHEN OTHERS => SEG <= "1111111";
+        END CASE;
+    END PROCESS;
+END BEAS;

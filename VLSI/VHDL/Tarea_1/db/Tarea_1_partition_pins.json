@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "MIN_U[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_U[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_U[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_U[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MIN_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_U[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DIG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DIG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "ENB",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_MST",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,133 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SEG6",
+					"strict" : false
+				},
+				{
+					"name" : "SEG5",
+					"strict" : false
+				},
+				{
+					"name" : "SEG4",
+					"strict" : false
+				},
+				{
+					"name" : "SEG3",
+					"strict" : false
+				},
+				{
+					"name" : "SEG2",
+					"strict" : false
+				},
+				{
+					"name" : "SEG1",
+					"strict" : false
+				},
+				{
+					"name" : "SEG0",
+					"strict" : false
+				},
+				{
+					"name" : "SEG26",
+					"strict" : false
+				},
+				{
+					"name" : "SEG25",
+					"strict" : false
+				},
+				{
+					"name" : "SEG24",
+					"strict" : false
+				},
+				{
+					"name" : "SEG23",
+					"strict" : false
+				},
+				{
+					"name" : "SEG22",
+					"strict" : false
+				},
+				{
+					"name" : "SEG21",
+					"strict" : false
+				},
+				{
+					"name" : "SEG20",
+					"strict" : false
+				},
+				{
+					"name" : "SEG36",
+					"strict" : false
+				},
+				{
+					"name" : "SEG35",
+					"strict" : false
+				},
+				{
+					"name" : "SEG34",
+					"strict" : false
+				},
+				{
+					"name" : "SEG33",
+					"strict" : false
+				},
+				{
+					"name" : "SEG32",
+					"strict" : false
+				},
+				{
+					"name" : "SEG31",
+					"strict" : false
+				},
+				{
+					"name" : "SEG30",
+					"strict" : false
+				},
+				{
+					"name" : "SEG46",
+					"strict" : false
+				},
+				{
+					"name" : "SEG45",
+					"strict" : false
+				},
+				{
+					"name" : "SEG44",
+					"strict" : false
+				},
+				{
+					"name" : "SEG43",
+					"strict" : false
+				},
+				{
+					"name" : "SEG42",
+					"strict" : false
+				},
+				{
+					"name" : "SEG41",
+					"strict" : false
+				},
+				{
+					"name" : "SEG40",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "ENB",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

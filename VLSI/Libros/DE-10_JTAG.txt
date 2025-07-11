@@ -1,0 +1,24 @@
+[bante@pc-bd-ace ~]$ jtagconfig
+1) USB-Blaster variant [3-5]
+  Unable to lock chain - Insufficient port permissions
+[bante@pc-bd-ace ~]$ sudo nano /etc/udev/rules.d/51-usbblaster.rules
+[sudo] password for bante: 
+Sorry, try again.
+[sudo] password for bante: 
+[bante@pc-bd-ace ~]$ sudo udevadm control --reload-rules
+sudo udevadm trigger
+[bante@pc-bd-ace ~]$ getent group dialout
+getent group plugdev
+dialout:x:20:
+plugdev:x:46:bante
+[bante@pc-bd-ace ~]$ sudo usermod -a -G dialout $USER
+sudo usermod -a -G plugdev $USER
+[bante@pc-bd-ace ~]$ pkill jtagd
+jtagd &
+[1] 25502
+[bante@pc-bd-ace ~]$ jtagconfig
+1) USB-Blaster [3-5]
+  031050DD   10M50DA(.|ES)/10M50DC
+
+[1]+  Done                    jtagd
+

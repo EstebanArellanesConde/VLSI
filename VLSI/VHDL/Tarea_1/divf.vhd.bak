@@ -1,0 +1,71 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity contador_de10lite is
+    Port (
+        CLK  : in std_logic;     -- Reloj del sistema
+        RST  : in std_logic;     -- Reset asíncrono
+        ENB  : in std_logic;     -- Habilitación del conteo
+        MIN_U : out std_logic_vector(3 downto 0);  -- Unidades de minuto
+        MIN_D : out std_logic_vector(3 downto 0);  -- Decenas de minuto
+        SEG_U : out std_logic_vector(3 downto 0);  -- Unidades de segundo
+        SEG_D : out std_logic_vector(3 downto 0)   -- Decenas de segundo
+    );
+end contador_de10lite;
+
+architecture Behavioral of contador_de10lite is
+    signal min_u_int : std_logic_vector(3 downto 0) := "1001";  -- 9
+    signal min_d_int : std_logic_vector(3 downto 0) := "1001";  -- 9
+    signal seg_u_int : std_logic_vector(3 downto 0) := "1001";  -- 9
+    signal seg_d_int : std_logic_vector(3 downto 0) := "0101";  -- 5
+    signal count_clk : integer := 0;  -- Divisor de frecuencia
+
+begin
+    process(CLK, RST)
+    begin
+        if RST = '1' then
+            min_u_int <= "1001";  -- 9
+            min_d_int <= "1001";  -- 9
+            seg_u_int <= "1001";  -- 9
+            seg_d_int <= "0101";  -- 5
+            count_clk <= 0;
+        elsif rising_edge(CLK) then
+            if ENB = '1' then
+                count_clk <= count_clk + 1;
+                if count_clk = 50000000 then -- Aproximadamente 1 segundo si CLK = 50 MHz
+                    count_clk <= 0;
+
+                    -- Manejo de los segundos
+                    if seg_u_int = "0000" then
+                        seg_u_int <= "1001"; -- Reiniciar unidades de segundo a 9
+                        if seg_d_int = "0000" then
+                            seg_d_int <= "0101"; -- Reiniciar decenas de segundo a 5
+
+                            -- Manejo de los minutos
+                            if min_u_int = "0000" then
+                                min_u_int <= "1001";
+                                if min_d_int /= "0000" then
+                                    min_d_int <= min_d_int - "0001";
+                                end if;
+                            else
+                                min_u_int <= min_u_int - "0001";
+                            end if;
+                        else
+                            seg_d_int <= seg_d_int - "0001";
+                        end if;
+                    else
+                        seg_u_int <= seg_u_int - "0001";
+                    end if;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- Salidas
+    MIN_U <= min_u_int;
+    MIN_D <= min_d_int;
+    SEG_U <= seg_u_int;
+    SEG_D <= seg_d_int;
+end Behavioral;
