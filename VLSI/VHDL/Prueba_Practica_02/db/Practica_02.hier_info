@@ -1,9 +1,0 @@
-|Practica_02
-Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst2.IN1
-B => inst.IN1
-B => inst2.IN0
-Q2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
